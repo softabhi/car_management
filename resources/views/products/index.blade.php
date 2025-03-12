@@ -16,7 +16,7 @@
             <div class="card">
                 <div class="card-header">
                     <h4>Products List
-                        <a href="{{ url('products/create') }}" class="btn btn-primary float-end">Add Category</a>
+                        <a href="{{ url('products/create') }}" class="btn btn-primary float-end">Add Product</a>
                     </h4>
                 </div>
                 <div class="card-body">
@@ -35,7 +35,7 @@
                             <tr>
                                 <td>{{$product->id}}</td>
                                 <td>{{$product->name}}</td>
-                                <td>{{$product->descriptions}}</td>
+                                <td>{{$product->description}}</td>
                                 <td>{{$product->price}}</td>
                                 <td>{{$product->stock}}</td>
                                 <td>

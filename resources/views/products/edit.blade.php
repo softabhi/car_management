@@ -26,8 +26,12 @@
                             <!-- <input type="text" name="name" class="form-control" > -->
                         </div>
                         <div class="mb-3">
-                            <label for="">Status</label>
-                            <input type="checkbox" name="status" {{ $product->status == 1 ? 'checked' : ''}}> Checked=Visual, Unchecked = Hideen
+                            <label for="">Price</label>
+                            <input type="text" name="price" class="form-control" value="{{ $product->price }}" >
+                        </div>
+                        <div class="mb-3">
+                            <label for="">Stock</label>
+                            <input type="text" name="stock" class="form-control" value="{{ $product->stock }}" >
                         </div>
                         <div class="mb-3">
                             <button type="submit" class="btn btn-primary">Save</button>

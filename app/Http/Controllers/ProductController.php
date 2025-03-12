@@ -52,7 +52,7 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $product)
+    public function edit(Product $product)
     {
         return view('products.edit',compact('product'));
 
@@ -66,7 +66,8 @@ class ProductController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'descriptions' => 'required|string|max:255',
-            'status' => 'nullable',
+            'price'=> 'required|string|max:200',
+            'stock'=> 'required|string|max:200'
         ]);
         echo "abhi";
         $category = Product::findOrFail($id);
@@ -75,7 +76,8 @@ class ProductController extends Controller
         $category->update([
             'name' => $request->input('name'),          // Get name from the request
             'descriptions' => $request->input('descriptions'),  // Get descriptions from the request
-            'status' => $request->input('status', $category->status),  // Default to current status if not provided
+            'price' => $request->input('price'),  // Default to current status if not provided
+            'stock' => $request->input('stock')  // Default to current status if not provided
         ]);
     
         
